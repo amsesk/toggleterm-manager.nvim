@@ -5,6 +5,7 @@ local defaults = {
 	mappings = {
 		i = {
 			["<CR>"] = { action = actions.toggle_term, exit_on_action = false },
+			["<A-a>"] = { action = actions.set_active, exit_on_action = false },
 			["<C-i>"] = { action = actions.create_term, exit_on_action = false },
 			["<C-d>"] = { action = actions.delete_term, exit_on_action = false },
 			["<C-r>"] = { action = actions.rename_term, exit_on_action = false },

@@ -4,8 +4,16 @@ local toggleterm_ui = require("toggleterm.ui")
 local toggleterm_config = require("toggleterm.config")
 local utils = require("lib.utils")
 local Terminal = require("toggleterm.terminal").Terminal
+local toggleterm_repl = require("toggleterm-repl")
 
 local M = {}
+
+function M.set_active()
+    local selection = actions_state.get_selected_entry()
+    local term = selection.value
+    toggleterm_repl.set_active(term.id)
+    print(vim.inspect(selection.value))
+end
 
 --- Create a new terminal and open it. If `exit_on_action = true`, focus it. If the term's direction is `float` and
 --- `exit_on_action = false`, don't automatically open the terminal upon creation to prevent flashes.
